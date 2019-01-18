@@ -41,7 +41,7 @@ public class BookRestController {
         return new ResponseEntity<>(repository.findOne(id), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(params = {"name"})
     public ResponseEntity<Collection<Book>> findBookWithName(@RequestParam(value = "name") String name) {
         return new ResponseEntity<>(repository.findByName(name), HttpStatus.OK);
     }
