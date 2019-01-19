@@ -59,7 +59,7 @@ http://localhost:8080/api/books/{id}
 
 Delete All Books
 
-`DELETE /api/books'
+`DELETE /api/books`
 
 http://localhost:8080/api/books
 
