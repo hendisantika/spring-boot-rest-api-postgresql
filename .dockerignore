@@ -1,0 +1,38 @@
+# flyctl launch added from .gitignore
+target
+!**/.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings
+**/.springBeans
+**/.sts4-cache
+
+### IntelliJ IDEA ###
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+
+### NetBeans ###
+nbproject/private
+build
+nbbuild
+dist
+nbdist
+.nb-gradle
+
+# flyctl launch added from .idea/.gitignore
+# Default ignored files
+.idea/shelf
+.idea/workspace.xml
+# Editor-based HTTP Client requests
+.idea/httpRequests
+# Datasource local storage ignored files
+.idea/dataSources
+.idea/dataSources.local.xml
+# Zeppelin ignored files
+.idea/ZeppelinRemoteNotebooks

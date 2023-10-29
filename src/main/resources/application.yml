@@ -7,7 +7,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/book_db?createDatabaseIfNotExist=true
     username: postgres
-    password: postgres
+    password: hendi34
   # JPA properties
   jpa:
     hibernate:
@@ -18,12 +18,12 @@ spring:
     open-in-view: false
     generate-ddl: false
 # Logger configuration
-logging:
-  pattern:
-    console: "%d %-5level %logger : %msg%n"
-  level:
-    org.springframework: INFO
-    org.hibernate: DEBUG
+#logging:
+#  pattern:
+#    console: "%d %-5level %logger : %msg%n"
+#  level:
+#    org.springframework: INFO
+#    org.hibernate: DEBUG
 # Server configuration
 server:
   port: 8080
@@ -33,3 +33,16 @@ security:
   user:
     name: user
 password: user
+
+app:
+  services:
+    url-shortener:
+      api-url: http://url-shortener.sit.dev-powerbiz.asia
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: BASIC
