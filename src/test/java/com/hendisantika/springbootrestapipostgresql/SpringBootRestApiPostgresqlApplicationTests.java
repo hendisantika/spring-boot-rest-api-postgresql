@@ -1,13 +1,29 @@
 package com.hendisantika.springbootrestapipostgresql;
 
-import org.junit.jupiter.api.Test;
+import com.hendisantika.springbootrestapipostgresql.repository.BookRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
-@SpringBootTest
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+
+@Testcontainers
+@SpringBootTest(
+        properties = {
+                "management.endpoint.health.show-details=always",
+                "spring.datasource.url=jdbc:tc:postgresql:16.4-alpine-3.40:///shinobiDB"
+        },
+        webEnvironment = RANDOM_PORT
+)
 public class SpringBootRestApiPostgresqlApplicationTests {
 
-    @Test
-    public void contextLoads() {
+    @Autowired
+    private BookRepository bookRepository;
+
+    @BeforeEach
+    void deleteAll() {
+        bookRepository.deleteAll();
     }
 
 }
