@@ -27,7 +27,10 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
+    # Opt-in: set repository variable USE_TESTCONTAINERS_CLOUD=true (and a valid TC_CLOUD_TOKEN secret)
+    # to run containers on Testcontainers Cloud. Otherwise the runner's local Docker daemon is used.
     - name: Setup Testcontainers Cloud Client
+      if: vars.USE_TESTCONTAINERS_CLOUD == 'true'
       uses: atomicjar/testcontainers-cloud-setup-action@v1
       with:
         token: ${{ secrets.TC_CLOUD_TOKEN }}
